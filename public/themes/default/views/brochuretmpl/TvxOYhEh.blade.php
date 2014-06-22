@@ -61,17 +61,17 @@
     <div class="container docs-overview">
         <h1 class="page-header" id="overview">Overview</h1>
         <div class="row">
-            <div class="col-md-9">
+            <div class="span9">
                 <h3>Image:</h3>
                 <div class="img-container"><img src="img/picture-1.jpg"></div>
             </div>
-            <div class="col-md-3">
+            <div class="span3">
                 <h3>Preview:</h3>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="span8">
                         <div class="img-preview img-preview-sm"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="span4">
                         <div class="img-preview img-preview-xs"></div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9">
+            <div class="span9">
                 <div class="docs-btn-group">
                     <h3>Methods:</h3>
                     <div class="button-group">
@@ -128,25 +128,25 @@
                         <button class="btn btn-primary" id="set-data" type="button" title="Set with the following data">Set Data</button>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="col-xs-6 col-sm-3 span3">
                             <div class="input-group">
                                 <span class="input-group-addon">X1</span>
                                 <input class="form-control" id="set-data-x1" type="number" value="480">
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="col-xs-6 col-sm-3 span3">
                             <div class="input-group">
                                 <span class="input-group-addon">Y1</span>
                                 <input class="form-control" id="set-data-y1" type="number" value="60">
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="col-xs-6 col-sm-3 span3">
                             <div class="input-group">
                                 <span class="input-group-addon">Width</span>
                                 <input class="form-control" id="set-data-width" type="number" value="640">
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="col-xs-6 col-sm-3 span3">
                             <div class="input-group">
                                 <span class="input-group-addon">Height</span>
                                 <input class="form-control" id="set-data-height" type="number" value="360">
@@ -166,7 +166,7 @@
                         </span>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="span6">
                             <div class="input-group">
                                 <input id="set-aspect-ratio-input" type="number" class="form-control" placeholder="Input the new aspect ratio here">
                                 <span class="input-group-btn">
@@ -174,7 +174,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="span6">
                             <div class="input-group">
                                 <input id="set-img-src-input" type="text" class="form-control" placeholder="Input the new image src here" value="img/picture-2.jpg">
                                 <span class="input-group-btn">
@@ -185,7 +185,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="span3">
                 <h3>Events:</h3>
                 <p>Current active event:</p>
                 <div class="btn-group btn-group-justified">
@@ -267,7 +267,7 @@ $image.on(&quot;dragmove&quot;, function() {
     <div class="container docs-getting-started">
         <h1 class="page-header" id="getting-started">Getting started</h1>
         <div class="row">
-            <div class="col-md-9">
+            <div class="span9">
                 <!-- Installation -->
                 <h2 class="page-header" id="installation">Installation</h2>
                 <p>Include files:</p>
@@ -389,7 +389,7 @@ $image.on(&quot;dragmove&quot;, function() {
                 <h4>dragend</h4>
                 <p>This event will be triggered after the cropping zone stop to move.</p>
             </div>
-            <div class="col-md-3">
+            <div class="span3">
                 <div class="hidden-print docs-sidebar" role="complementary">
                     <ul class="nav">
                         <li><a href="#installation">Installation</a></li>

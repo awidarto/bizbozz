@@ -11,7 +11,6 @@
     @if(Auth::check())
 
         <li><a href="{{ URL::to('pos') }}" {{ sa('pos') }} >POS</a></li>
-        <li><a href="{{ URL::to('dashboard') }}" {{ sa('dashboard') }} >Stock Check</a></li>
 
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -20,12 +19,14 @@
               </a>
             <ul class="dropdown-menu">
                 <li><a href="{{ URL::to('products') }}" {{ sa('products') }} >Catalog</a></li>
-                <li><a href="{{ URL::to('productcategory') }}" {{ sa('productcategory') }} >Category</a></li>
+                <li><a href="{{ URL::to('productcategory') }}" {{ sa('productcategory') }} >Product Category</a></li>
+                <li><a href="{{ URL::to('inventory') }}" {{ sa('inventory') }} >Inventory</a></li>
+                <li><a href="{{ URL::to('dashboard') }}" {{ sa('dashboard') }} >Stock Check</a></li>
+                <li><a href="{{ URL::to('outlet') }}" {{ sa('outlet') }} >Outlets</a></li>
             </ul>
         </li>
 
-        <li><a href="{{ URL::to('inventory') }}" {{ sa('inventory') }} >Inventory</a></li>
-        <li><a href="{{ URL::to('outlet') }}" {{ sa('outlet') }} >Outlets</a></li>
+        <li><a href="{{ URL::to('calendar') }}" {{ sa('calendar') }} >Calendar</a></li>
 
         <li><a href="{{ URL::to('transaction') }}" {{ sa('transaction') }} >Transactions</a></li>
 
@@ -41,6 +42,17 @@
                 <li><a href="{{ URL::to('campaign') }}" {{ sa('campaign') }} >Campaign</a></li>
                 <li><a href="{{ URL::to('newsletter') }}" {{ sa('newsletter') }} >Newsletter</a></li>
                 <li><a href="{{ URL::to('brochure') }}" {{ sa('brochure') }} >Brochure</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Finance
+                <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{ URL::to('invoices') }}" {{ sa('invoices') }} >Invoices</a></li>
+                <li><a href="{{ URL::to('payable') }}" {{ sa('payable') }} >Payable</a></li>
             </ul>
         </li>
 

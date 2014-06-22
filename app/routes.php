@@ -37,6 +37,13 @@ Route::controller('enquiry', 'EnquiryController');
 
 Route::controller('order', 'OrderController');
 
+Route::controller('calendar', 'CalendarController');
+
+
+Route::controller('invoices', 'InvoicesController');
+Route::controller('payable', 'PayableController');
+
+
 Route::controller('newsletter', 'NewsletterController');
 Route::controller('campaign', 'CampaignController');
 Route::controller('contactgroup', 'ContactgroupController');
@@ -67,6 +74,9 @@ Route::controller('home', 'HomeController');
 //Route::get('/', 'ProductsController@getIndex');
 Route::get('/', 'PosController@getIndex');
 
+Route::get('home',function(){
+    return View::make('home');
+});
 
 Route::get('content/pages', 'PagesController@getIndex');
 Route::get('content/posts', 'PostsController@getIndex');
