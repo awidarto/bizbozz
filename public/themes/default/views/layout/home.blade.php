@@ -90,6 +90,7 @@
                                     </div>
                                 </form>
                             </div>
+
                             <p>If you haven't got an account, then let's get started</p>
                             <div class="signup-form">
                                 <form>
