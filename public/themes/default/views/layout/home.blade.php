@@ -32,7 +32,7 @@
 
     <body>
 
-        <div class="page-wrapper">
+        <div class="page-wrapper" id="about">
             <!-- header-11 -->
             <header class="header-11">
                 <div class="container">
@@ -45,14 +45,11 @@
                             <div class="collapse navbar-collapse pull-right">
                                 <ul class="nav pull-left">
                                     <li class="active"><a href="#">HOME</a></li>
-                                    <li><a href="#">COMPANY</a></li>
-                                    <li><a href="#">PORTFOLIO</a></li>
+                                    <li><a href="#about">WHAT IS BOZZ</a></li>
+                                    <li><a href="#packages">PACKAGES</a></li>
                                     <li><a href="#">BLOG</a></li>
                                     <li><a href="#">CONTACT</a></li>
                                 </ul>
-                                <form class="navbar-form pull-left">
-                                    <a class="btn btn-primary" href="{{ URL::to('login') }}">SIGN IN</a>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -70,7 +67,7 @@
                                 Your business is getting bigger by minutes, meaning, small tasks become more and more tedious and time consuming,and organizing is a daunting task.
                             </p>
                             <p>
-                                Let's make it lean, let's make it mean. Like a BOZZ.
+                                Let's make it lean, let's make it mean. And do it all just like a BOZZ.
                             </p>
                         </div>
                         <div class="col-sm-3 col-sm-offset-1 ">
@@ -81,9 +78,7 @@
                                         <input class="form-control" type="text" placeholder="Your E-mail">
                                     </div>
                                     <div class="form-group">
-                                        <div>
-                                            <input type="password" class="form-control" placeholder="Password">
-                                        </div>
+                                        <input type="password" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-info">Sign In</button>
@@ -119,7 +114,7 @@
             </section>
 
             <!-- price-1 -->
-            <section class="price-1">
+            <section class="price-1" id="packages">
                 <div class="container">
                     <h3>Take a look to our Packages</h3>
                     <p class="lead">
@@ -133,9 +128,10 @@
                                 <div class="description">
                                     <ul>
                                         <li>Point Of Sales</li>
-                                        <li>Multi Product Catalog</li>
+                                        <li>Product Catalog</li>
                                         <li>Inventory</li>
-                                        <li>Transaction</li>
+                                        <li>Sales Transaction</li>
+                                        <li>Customer Database</li>
                                         <li>Invoicing & Expense Tracking</li>
                                         <li>Reporting
                                             <ul>
@@ -146,38 +142,136 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="btn disabled" href="#">Your Current Plan</a>
+                                <a class="btn btn-primary" href="#">Choose Plan <span class="badge">Beta</span></a>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="plan">
-                                <div class="title">Professional</div>
-                                <div class="price">39$/month</div>
+                                <div class="title">Service Provider</div>
+                                <div class="price">19$/month</div>
                                 <div class="description">
-                                    10,000 messages<br>
-                                    <b>unlimited</b> data<br>
-                                    <b>unlimited</b> users<br>
-                                    first 30 day free
+                                    <ul>
+                                        <li>Service Catalog</li>
+                                        <li>Task & Calendar</li>
+                                        <li>Customer Database</li>
+                                        <li>Invoicing & Expense Tracking</li>
+                                        <li>Reporting
+                                            <ul>
+                                                <li>Transaction Report</li>
+                                                <li>Service Time Report</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <a class="btn btn-primary" href="#">Change to this Plan</a>
-
-                                <div class="ribbon">NEW</div>
+                                <a class="btn btn-primary" href="#">Choose Plan <span class="badge">Beta</span></a>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="plan">
-                                <div class="title">Business</div>
-                                <div class="price">59$/month</div>
+                                <div class="title">Building Administrator</div>
+                                <div class="price">Call for pricing</div>
                                 <div class="description">
-                                    10,000 messages<br>
-                                    <b>unlimited</b> data<br>
-                                    <b>unlimited</b> users<br>
-                                    first 100 day free
+                                    <ul>
+                                        <li>Tenant Fascility
+                                            <ul>
+                                                <li>Tenant Portal</li>
+                                                <li>Event Calendar</li>
+                                            </ul>
+                                        </li>
+                                        <li>Maintenance
+                                            <ul>
+                                                <li>Supply Inventory</li>
+                                                <li>Task & Calendar</li>
+                                                <li>Maintenance Logging</li>
+                                            </ul>
+                                        </li>
+                                        <li>Invoicing & Expense Tracking</li>
+                                        <li>Reporting
+                                            <ul>
+                                                <li>Service Time Report</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <a class="btn btn-primary" href="#">Change to this Plan</a>
+                                <a class="btn btn-primary" href="#">Choose Plan <span class="badge">Beta</span></a>
                             </div>
                         </div>
                     </div>
+                    <div class="row plans next-row">
+                        <div class="col-sm-4">
+                            <div class="plan">
+                                <div class="title">Customer Care & Back Office</div>
+                                <div class="price">19$/month</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Customer Care
+                                            <ul>
+                                                <li>Advanced Customer Database</li>
+                                                <li>Newsletter & Brochure Maker</li>
+                                            </ul>
+                                        </li>
+                                        <li>Back Office
+                                            <ul>
+                                                <li>Invoicing & Expense Tracking</li>
+                                                <li>Document Management</li>
+                                                <li>Human Resource Manager</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="btn btn-primary" href="#">Choose Plan <span class="badge">Beta</span></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="plan">
+                                <div class="title">Culinary & Restaurant</div>
+                                <div class="price">19$/month</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Point Of Sales</li>
+                                        <li>Delivery Order Form</li>
+                                        <li>Menu Manager</li>
+                                        <li>Inventory</li>
+                                        <li>Sales Transaction</li>
+                                        <li>Customer Database</li>
+                                        <li>Invoicing & Expense Tracking</li>
+                                        <li>Reporting
+                                            <ul>
+                                                <li>Transaction Report</li>
+                                                <li>Sales Report</li>
+                                                <li>Inventory Status Report</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="btn btn-primary disabled" href="#">Coming Soon <span class="badge">Beta</span></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="plan">
+                                <div class="title">Delivery Manager</div>
+                                <div class="price">19$/month</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Administration
+                                            <ul>
+                                                <li>Order Listing</li>
+                                                <li>Order Assignment</li>
+                                            </ul>
+                                        </li>
+                                        <li>Android Application
+                                            <ul>
+                                                <li>Delivery Order List</li>
+                                                <li>GPS Assisted Address Locator</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="btn disabled" href="#">Your Current Plan</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -208,10 +302,10 @@
                                 <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#">Company</a>
+                                <a href="#about">What is BOZZ</a>
                             </li>
                             <li>
-                                <a href="#">Portfolio</a>
+                                <a href="#packages">Packages</a>
                             </li>
                             <li>
                                 <a href="#">Blog</a>

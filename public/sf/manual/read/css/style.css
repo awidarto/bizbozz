@@ -855,41 +855,41 @@ body {
 }
 .mcontent {
   /**
- * Content 7 stylesheet  
+ * Content 7 stylesheet
  * */
 
   /**
- * Content 8 stylesheet  
+ * Content 8 stylesheet
  * */
 
   /**
- * Content 11 stylesheet  
- * */
-
+ * Content 11 stylesheet
   @import url(http://fonts.googleapis.com/css?family=Montserrat);
+ * */
+
 
   /**
- * Content 13 stylesheet  
+ * Content 13 stylesheet
  * */
 
   /**
- * Header 10 stylesheet  
+ * Header 10 stylesheet
  * */
 
   /**
- * Header 11 stylesheet  
+ * Header 11 stylesheet
  * */
 
   /**
- * Price 1 stylesheet  
+ * Price 1 stylesheet
  * */
 
   /**
- * Footer 2 stylesheet  
+ * Footer 2 stylesheet
  * */
 
   /**
- * Footer 3 stylesheet  
+ * Footer 3 stylesheet
  * */
 
 }
@@ -2197,10 +2197,10 @@ body {
   .mcontent .footer-2 > .container > *:after {
     content: " ";
     /* 1 */
-  
+
     display: table;
     /* 2 */
-  
+
   }
   .mcontent .footer-2 > .container > *:after {
     clear: both;
