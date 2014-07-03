@@ -28,6 +28,17 @@
         {{ HTML::style('css/typography.css')}}
         {{ HTML::style('css/home.css')}}
 
+        <style type="text/css">
+            .half-field{
+                display: table-cell;
+                width: 50%;
+            }
+
+            .left{
+                padding-right: 5px;
+            }
+        </style>
+
     </head>
 
     <body>
@@ -73,33 +84,80 @@
                         <div class="col-sm-3 col-sm-offset-1 ">
                             <p>Already have an account ? Please sign in</p>
                             <div class="signup-form">
-                                <form>
+                                @if (Session::get('loginError'))
+                                    <div class="alert alert-danger">{{ Session::get('loginError') }}</div>
+                                         <button type="button" class="close" data-dismiss="alert"></button>
+                                @endif
+
+                                {{ Form::open(array('url' => 'login')) }}
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Your E-mail">
+                                        <input class="form-control" name="email" type="text" placeholder="Your E-mail">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-info">Sign In</button>
-                                    </div>
+                                    {{ Form::close() }}
                                 </form>
                             </div>
 
                             <p>If you haven't got an account, then let's get started</p>
                             <div class="signup-form">
-                                <form>
+                                @if (Session::get('signupSuccess'))
+                                    <div class="alert alert-info">{{ Session::get('signupSuccess') }}</div>
+                                         <button type="button" class="close" data-dismiss="alert"></button>
+                                @endif
+                                @if (Session::get('signupError'))
+                                    <div class="alert alert-danger">{{ Session::get('signupError') }}</div>
+                                         <button type="button" class="close" data-dismiss="alert"></button>
+                                @endif
+
+                                {{ Form::open(array('url' => 'signup')) }}
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Your E-mail">
+                                        <div class="half-field left" >
+                                            <input type="text" name="firstname" class="form-control" placeholder="First Name">
+                                        </div>
+                                        <div class="half-field" >
+                                            <input type="text" name="lastname" class="form-control" placeholder="Last Name">
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <div>
-                                            <input type="password" class="form-control" placeholder="Password">
+                                        <input class="form-control" name="email" type="text" placeholder="E-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="half-field left" >
+                                            <input type="password" name="password" class="form-control" placeholder="Password">
                                         </div>
-                                        <div>
-                                            <input type="password" class="form-control" placeholder="Confirmation">
+                                        <div class="half-field" >
+                                            <input type="password" name="repass" class="form-control" placeholder="Confirmation">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="half-field left" >
+                                            <label class="radio" for="gender">
+                                                <span class="icons">
+                                                    <span class="first-icon fui-radio-unchecked">
+                                                    </span>
+                                                    <span class="second-icon fui-radio-checked">
+                                                    </span>
+                                                </span>
+                                                <input type="radio" name="gender" value="male" checked="checked" > Male
+                                            </label>
+                                        </div>
+                                        <div class="half-field" >
+                                            <label class="radio" for="gender">
+                                                <span class="icons">
+                                                    <span class="first-icon fui-radio-unchecked">
+                                                    </span>
+                                                    <span class="second-icon fui-radio-checked">
+                                                    </span>
+                                                </span>
+                                                <input type="radio" name="gender" value="female" > Female
+                                            </label>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-info">Sign Up</button>
                                     </div>
@@ -327,11 +385,19 @@
             </footer>
         </div>
 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(':checkbox').checkbox();
+                //$(':radio').radio();
+            });
+        </script>
 
 
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="{{ URL::to('sf')}}/common-files/js/jquery-1.11.1.min.js"></script>
         <script src="{{ URL::to('sf')}}/flat-ui/js/bootstrap.min.js"></script>
+        <script src="{{ URL::to('sf')}}/flat-ui/js/flatui-checkbox.js"></script>
+        <script src="{{ URL::to('sf')}}/flat-ui/js/flatui-radio.js"></script>
         <script src="{{ URL::to('sf')}}/common-files/js/modernizr.custom.js"></script>
         <script src="{{ URL::to('sf')}}/common-files/js/page-transitions.js"></script>
         <script src="{{ URL::to('sf')}}/common-files/js/startup-kit.js"></script>

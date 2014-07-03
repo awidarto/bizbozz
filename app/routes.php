@@ -74,8 +74,12 @@ Route::controller('home', 'HomeController');
 //Route::get('/', 'ProductsController@getIndex');
 Route::get('/', 'PosController@getIndex');
 
-Route::get('home',function(){
-    return View::make('home');
+Route::get('/',function(){
+    if(Auth::check()){
+        return Redirect::to('products');
+    }else{
+        return View::make('home');
+    }
 });
 
 Route::get('content/pages', 'PagesController@getIndex');
@@ -355,6 +359,66 @@ Route::get('logout',function(){
     return Redirect::to('/');
 });
 
+Route::post('signup',function(){
+    // validate the info, create rules for the inputs
+    $rules = array(
+        'firstname'    => 'required',
+        'lastname'    => 'required',
+        'email'    => 'required|email',
+        'password' => 'required|alphaNum|min:3|same:repass'
+    );
+
+    // run the validation rules on the inputs from the form
+    $validator = Validator::make(Input::all(), $rules);
+
+    // if the validator fails, redirect back to the form
+    if ($validator->fails()) {
+
+        Event::fire('log.a',array('create account','createaccount',Input::get('email'),'validation fail'));
+
+        Session::flash('signupError', 'validation error');
+        return Redirect::to('/');
+    } else {
+
+        $data = Input::get();
+
+        unset($data['csrf_token']);
+
+
+        $model = new Member();
+
+        $data['createdDate'] = new MongoDate();
+        $data['lastUpdate'] = new MongoDate();
+
+        unset($data['repass']);
+        $data['password'] = Hash::make($data['password']);
+
+        $data['fullname'] = $data['firstname'].' '.$data['lastname'];
+
+
+        if($obj = $model->insert($data)){
+            Event::fire('log.a',array('create account','createaccount',Input::get('email'),'account created'));
+            //Event::fire('product.createformadmin',array($obj['_id'],$passwordRandom,$obj['conventionPaymentStatus']));
+            //return Redirect::to('account/success');
+            Session::flash('signupSuccess', 'Thank you and welcome to '.Config::get('site.name').' ! Go ahead, sign in and start exploring!');
+            return Redirect::to('/');
+
+        }else{
+
+            Event::fire('log.a',array('create account','createaccount',Input::get('email'),'fail to create account'));
+
+            //return Redirect::to($this->backlink)->with('notify_success',ucfirst(Str::singular($controller_name)).' saving failed');
+            Session::flash('signupError', 'Failed to create member');
+            return Redirect::to('/');
+        }
+
+    }
+
+
+    return View::make('pages.createaccount');
+});
+
+
 /* Filters */
 
 Route::filter('auth', function()
@@ -362,7 +426,7 @@ Route::filter('auth', function()
 
     if (Auth::guest()){
         Session::put('redirect',URL::full());
-        return Redirect::to('login');
+        return Redirect::to('/');
     }
 
     if($redirect = Session::get('redirect')){
