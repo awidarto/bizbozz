@@ -338,7 +338,7 @@ Route::post('login',function(){
                 // validation not successful
                 // send back to form with errors
                 // send back to form with old input, but not the password
-                return Redirect::to('login')
+                return Redirect::to('/')
                     ->withErrors($validator)
                     ->withInput(Input::except('password'));
             }
@@ -347,7 +347,7 @@ Route::post('login',function(){
             // user does not exist in database
             // return them to login with message
             Session::flash('loginError', 'This user does not exist.');
-            return Redirect::to('login');
+            return Redirect::to('/');
         }
 
     }
